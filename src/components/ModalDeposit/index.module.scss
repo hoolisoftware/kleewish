@@ -1,0 +1,42 @@
+.modal
+{
+    max-width: 350px;
+}
+
+.equal
+{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-gray)
+}
+
+.labelCurrency
+{
+    text-align: center;
+    display: block;
+    color: var(--color-neutral);
+    margin-bottom: .3rem;
+}
+
+.inputCurrency
+{
+    text-align: center;
+}
+
+.methods
+{
+    align-items: stretch;
+}
+
+.cardMethod
+{
+    width: 50%;
+    padding: .5rem;
+
+    &Image
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

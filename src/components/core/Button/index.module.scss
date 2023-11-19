@@ -1,0 +1,172 @@
+@use '@mixins' as *;
+
+// == [ base ] ==
+
+.button
+{
+    display: flex;
+    border: none;
+    transition: .1s;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .05rem;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+
+    & svg
+    {
+        fill: currentColor;
+        height: 1em;
+    }
+
+    &:hover
+    {
+        opacity: .8;
+        cursor: pointer;
+    }
+}
+
+// == [ sizes ] ==
+
+.button--sm
+{
+    border-radius: .5rem;
+    font-size: .8rem;
+    padding: .5rem;
+}
+
+.button--md
+{
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.button--lg
+{
+    border-radius: 1.2rem;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+}
+
+
+// == [ colors ] ==
+
+.button--primary-gradient
+{
+    color: var(--color-white);
+    background: linear-gradient(98deg, #DBC1AB 0%, #C9A788 100%);
+
+    @include dark
+    {
+        background: #ffffff;
+        color: var(--color-black);
+    }
+}
+
+.button--primary
+{
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+.button--success
+{
+    color: var(--color-white);
+    background: var(--color-success);
+}
+
+.button--warning
+{
+    color: var(--color-black);
+    background: var(--color-warning);
+}
+
+.button--error
+{
+    color: var(--color-white);
+    background: var(--color-error);
+}
+
+.button--gray
+{
+    color: var(--color-black);
+    background: var(--color-gray);
+}
+
+// == [ variants ] ==
+
+.button--blank
+{
+    background: none;
+    color: var(--color-primary);
+
+    &:hover
+    {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+// == [ modificators ] ==
+
+.fullWidth
+{
+    width: 100%;
+}
+
+.animated
+{
+    &:hover
+    {
+        opacity: 1;
+    }
+
+    &:not(.button--blank)
+    {
+        &::before
+        {
+            content: '';
+            position: absolute;
+            left:-30%;
+            height: 300%;
+            width: 1.5rem;
+            background: rgba(255, 255, 255, 0.3);
+            transform-origin: center;
+            transform: rotate(25deg);
+            transition: .5s linear;
+        }
+
+        &:hover::before
+        {
+            left:130%;
+        }
+    }
+}
+
+.button:disabled
+{
+    opacity: .5;
+
+    &:hover
+    {
+        cursor: not-allowed;
+    }
+}
+
+// == [ components ] ==
+
+.icon
+{
+    aspect-ratio: 1 / 1;
+    line-height: 0px;
+}
+
+.icon svg
+{
+    font-size: 1.5rem;
+    line-height: 0px;
+}

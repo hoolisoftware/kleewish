@@ -1,0 +1,65 @@
+@use '@mixins' as *;
+
+.card
+{
+    border-radius: 1rem;
+    overflow: hidden;
+
+    @include dark
+    {
+        border: 1px solid #333;
+    }
+}
+
+.shadow
+{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card--outlined
+{
+    border: 1px solid #EEE;
+    background: var(--color-bg);
+}
+
+.card--contained
+{
+    border: 1px solid #EEE;
+    background: #FFF;
+
+    @include dark
+    {
+        background: #171717;
+    }
+}
+
+.cardBody, .cardHead, .cardFooter
+{
+    padding: 1rem;
+}
+
+.cardHead
+{
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-gray);
+
+    @include dark
+    {
+        border-bottom: 1px solid #333;
+    }
+}
+
+.cardFooter
+{
+    border-top: 1px solid var(--color-gray);
+    
+    @include dark
+    {
+        border-top: 1px solid #333;
+    }
+}
+
+.transparent
+{
+    border: none;
+}

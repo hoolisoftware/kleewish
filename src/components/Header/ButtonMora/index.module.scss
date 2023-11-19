@@ -1,0 +1,11 @@
+@use "@mixins" as *;
+
+.button {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-text);
+
+  @include dark {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--color-text);
+  }
+}

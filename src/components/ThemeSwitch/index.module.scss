@@ -1,0 +1,63 @@
+@use '@mixins' as *;
+
+.themeSwitch {
+  position: relative;
+  display: flex;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);;
+  border-radius: 50rem;
+  padding: 2px;
+
+  @include dark
+  {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.iconBox
+{
+  width: 100%;
+  padding: .3rem .5rem;
+  height: min-content;
+}
+
+.icon
+{
+  position: relative;
+  height: 1rem;
+  line-height: 0;
+  display: block;
+  z-index: 1;
+}
+
+.switch
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px;
+  height: 100%;
+  width: calc(50% + 2px);
+  transition: .1s;
+  transform: translate(0);
+
+  @include dark
+  {
+    transform: translate(calc(100% - 4px));
+  }
+}
+
+.switchInner
+{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(98deg, #DBC1AB 0%, #C9A788 100%);
+  border-radius: 50rem;
+  z-index: 0;
+  transition: .5s;
+  
+  @include dark
+  {
+    background: #FFF;
+  }
+}

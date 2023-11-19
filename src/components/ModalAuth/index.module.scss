@@ -1,0 +1,42 @@
+@use '@mixins' as *;
+
+.modal
+{
+    max-width: 300px;
+}
+
+.buttonVk, .buttonTg
+{
+    padding: .6rem !important;
+}
+
+.buttonVk
+{
+    background: #FFFFFF;
+    border: 1px solid #26A5E4; 
+    color: var(--color-black);
+
+    @include dark
+    {
+        background: #FFFFFF;
+        border: 1px solid #26A5E4; 
+        color: var(--color-black);
+    }
+}
+
+.buttonTg
+{
+    background: #26A5E4;
+    color: var(--color-white);
+
+    @include dark
+    {
+        background: #26A5E4;
+        color: var(--color-white);
+    }
+}
+
+.socialIcon
+{
+    height: 100%;
+}

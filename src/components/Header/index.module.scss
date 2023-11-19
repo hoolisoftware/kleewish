@@ -1,0 +1,112 @@
+@use '@mixins' as *;
+
+.header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+}
+
+.logo
+{
+    width: auto;
+
+    @include dark
+    {
+        display: none;
+    }
+
+    @include mobile
+    {
+        height: 2rem;
+    }
+}
+
+.logoDark
+{
+    display: none;
+
+    @include dark
+    {
+        display: block;
+    }
+}
+
+.section
+{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.menu
+{
+    align-self: stretch;
+    display: flex;
+    list-style: none;
+
+    @include tablet
+    {
+        display: none;
+    }
+}
+
+.item
+{
+    position: relative;
+    color: var(--color-text);
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: .6rem;
+    padding-right: .6rem;
+
+    &:hover
+    {
+        opacity: .8;
+    }
+
+    &Active::before
+    {
+        content: '';
+        background: linear-gradient(98deg, #DBC1AB 0%, #C9A788 100%);
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+
+        @include dark
+        {
+            background: #fff;
+        }
+    }
+}
+
+.themeSwitch
+{
+    @include tablet
+    {
+        display: none;
+    }
+}
+
+.burger
+{
+    display: none;
+
+    & svg
+    {
+        height: 2rem;
+    }
+
+    @include tablet
+    {
+        display: block;
+    }
+}

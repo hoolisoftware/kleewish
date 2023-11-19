@@ -1,4 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const path = require("path");
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ["kleewish.hoolisoftware.xyz", "picsum.photos"],
+  },
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.resolve.alias["@mixins"] = path.join(
+      __dirname,
+      "src/scss/mixins.scss"
+    );
+    return config;
+  },
+};
+
+module.exports = nextConfig;

@@ -1,0 +1,99 @@
+@use '@mixins' as *;
+
+// === [ base ] ===
+
+.input
+{
+    display: block;
+    font-family: inherit;
+    resize: vertical;
+
+    &::placeholder
+    {
+        color: #A9A9A9;
+
+        @include dark
+        {
+            color: #A9A9A9;
+        }
+    }
+
+    &:focus
+    {
+        outline: none;
+    }
+}
+
+// === [ sizes ] ===
+
+.input--sm
+{
+    border-radius: .5rem;
+    font-size: .8rem;
+    padding: .5rem;
+}
+
+.input--md
+{
+    border-radius: 1rem;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.input--lg
+{
+    border-radius: 1.2rem;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+}
+
+// === [ variants ] ===
+
+.input--contained
+{
+    background: #F9F9F9;
+    border: 1px solid #DFDFDF;
+
+    @include dark
+    {
+        background: #171717;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+}
+
+.input--outlined
+{
+    background: none;
+    border: 1px solid #DFDFDF;
+
+    @include dark
+    {
+        border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+}
+
+// === [ states ] ===
+
+.input:disabled
+{
+    opacity: .5;
+}
+
+// === [ components ] ===
+
+.label
+{
+    margin-bottom: .5rem;
+}
+
+.error
+{
+    margin-top: .4rem;
+}
+
+// === [ modificators ] ===
+
+.fullWidth
+{
+    width: 100%;
+}

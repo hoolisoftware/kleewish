@@ -1,0 +1,17 @@
+.loadingAnimate
+{
+    animation-name: loadingAnimate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loadingAnimate {
+    from
+    {
+        transform: rotate(0);
+    }
+    to
+    {
+        transform: rotate(180deg);
+    }
+}
